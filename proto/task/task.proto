@@ -10,6 +10,13 @@ message Task {
   string userId  = 4;
 }
 
+message GetTaskRequest {
+  string id      = 1;
+}
+message GetTaskResponse {
+  Task task = 1;
+}
+
 message CreateTaskRequest {
   string title  = 1;
   bool isDone   = 2;
@@ -43,7 +50,7 @@ message ListTasksResponse {
 
 service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
-  rpc GetTask    (Task)              returns (Task);
+  rpc GetTask    (GetTaskRequest)    returns (GetTaskResponse);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
   rpc ListTasks  (ListTasksRequest)  returns (ListTasksResponse);

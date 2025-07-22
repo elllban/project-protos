@@ -1,4 +1,4 @@
-PROTOS  := proto/*.proto
+PROTOS  := proto/task/*.proto
 OUT_DIR := .
 
 generate:
@@ -8,4 +8,4 @@ generate:
 	  $(PROTOS)
 
 clean:
-	find . -name "*.pb.go" -dele
+	find . -name "*.pb.go" -delete
