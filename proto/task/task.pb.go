@@ -25,7 +25,7 @@ const (
 type Task struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Task          string                 `protobuf:"bytes,2,opt,name=task,proto3" json:"task,omitempty"`
 	IsDone        bool                   `protobuf:"varint,3,opt,name=isDone,proto3" json:"isDone,omitempty"`
 	UserId        string                 `protobuf:"bytes,4,opt,name=userId,proto3" json:"userId,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -69,9 +69,9 @@ func (x *Task) GetId() string {
 	return ""
 }
 
-func (x *Task) GetTitle() string {
+func (x *Task) GetTask() string {
 	if x != nil {
-		return x.Title
+		return x.Task
 	}
 	return ""
 }
@@ -180,7 +180,7 @@ func (x *GetTaskResponse) GetTask() *Task {
 
 type CreateTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Task          string                 `protobuf:"bytes,1,opt,name=task,proto3" json:"task,omitempty"`
 	IsDone        bool                   `protobuf:"varint,2,opt,name=isDone,proto3" json:"isDone,omitempty"`
 	UserId        string                 `protobuf:"bytes,3,opt,name=userId,proto3" json:"userId,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -217,9 +217,9 @@ func (*CreateTaskRequest) Descriptor() ([]byte, []int) {
 	return file_proto_task_task_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateTaskRequest) GetTitle() string {
+func (x *CreateTaskRequest) GetTask() string {
 	if x != nil {
-		return x.Title
+		return x.Task
 	}
 	return ""
 }
@@ -285,7 +285,7 @@ func (x *CreateTaskResponse) GetTask() *Task {
 type UpdateTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Task          string                 `protobuf:"bytes,2,opt,name=task,proto3" json:"task,omitempty"`
 	IsDone        bool                   `protobuf:"varint,3,opt,name=isDone,proto3" json:"isDone,omitempty"`
 	UserId        string                 `protobuf:"bytes,4,opt,name=userId,proto3" json:"userId,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -329,9 +329,9 @@ func (x *UpdateTaskRequest) GetId() string {
 	return ""
 }
 
-func (x *UpdateTaskRequest) GetTitle() string {
+func (x *UpdateTaskRequest) GetTask() string {
 	if x != nil {
-		return x.Title
+		return x.Task
 	}
 	return ""
 }
@@ -558,27 +558,27 @@ var File_proto_task_task_proto protoreflect.FileDescriptor
 
 const file_proto_task_task_proto_rawDesc = "" +
 	"\n" +
-	"\x15proto/task/task.proto\x12\x04task\"\\\n" +
+	"\x15proto/task/task.proto\x12\x04task\"Z\n" +
 	"\x04Task\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04task\x18\x02 \x01(\tR\x04task\x12\x16\n" +
 	"\x06isDone\x18\x03 \x01(\bR\x06isDone\x12\x16\n" +
 	"\x06userId\x18\x04 \x01(\tR\x06userId\" \n" +
 	"\x0eGetTaskRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"1\n" +
 	"\x0fGetTaskResponse\x12\x1e\n" +
 	"\x04task\x18\x01 \x01(\v2\n" +
-	".task.TaskR\x04task\"Y\n" +
-	"\x11CreateTaskRequest\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x16\n" +
+	".task.TaskR\x04task\"W\n" +
+	"\x11CreateTaskRequest\x12\x12\n" +
+	"\x04task\x18\x01 \x01(\tR\x04task\x12\x16\n" +
 	"\x06isDone\x18\x02 \x01(\bR\x06isDone\x12\x16\n" +
 	"\x06userId\x18\x03 \x01(\tR\x06userId\"4\n" +
 	"\x12CreateTaskResponse\x12\x1e\n" +
 	"\x04task\x18\x01 \x01(\v2\n" +
-	".task.TaskR\x04task\"i\n" +
+	".task.TaskR\x04task\"g\n" +
 	"\x11UpdateTaskRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04task\x18\x02 \x01(\tR\x04task\x12\x16\n" +
 	"\x06isDone\x18\x03 \x01(\bR\x06isDone\x12\x16\n" +
 	"\x06userId\x18\x04 \x01(\tR\x06userId\"4\n" +
 	"\x12UpdateTaskResponse\x12\x1e\n" +
